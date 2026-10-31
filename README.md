@@ -2,6 +2,8 @@
 
 # Mods Core
 
+**⬇️ Download:** [`modscore.wasm`](https://github.com/Emilchill/mods-core/raw/main/download/modscore.wasm) (Cinnabar v0.1.31 or newer). Import it in **Settings → Mods → Import mod...**
+
 **One list of your Cinnabar mods.** Press **F10**, then click a mod to open its settings.
 
 Mods Core is a small mod for [Cinnabar](https://github.com/cinnabar-mc/cinnabar), the Rust
