@@ -330,6 +330,22 @@ frame is enough.
 
 ## Building Mods Core
 
+### Windows (easiest)
+
+Open PowerShell in the project folder (the one with `Cargo.toml`), then:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup.ps1 install   # once: Git, Python, MSVC build tools, Rust 1.99
+powershell -ExecutionPolicy Bypass -File build.ps1           # writes dist\modscore.wasm and opens its folder
+```
+
+`build.ps1 -Menu` regenerates the screen first (`tools/gen_surface.py`); `build.ps1 -Clean` deletes `target\` and `dist\` first.
+`setup.ps1 uninstall` removes only what `install` added. After building, remove the old Mods Core in
+Settings -> Mods and import `dist\modscore.wasm`.
+
+### Any platform
+
+
 You need Rust 1.99 or newer with the `wasm32-unknown-unknown` target, and Python 3.
 
 ```sh
@@ -383,3 +399,7 @@ Cinnabar reads TTF and OTF files of up to 2 MB.
 ## Phones and tablets (Android)
 
 There is no F10 on a phone: with touch controls, Mods Core shows a **Mods** button that opens the list. Move it with the touch layout editor. Cinnabar on iOS does not run mods.
+
+## Credits
+
+Thanks to **crawl** from the Cinnabar community for the 1.3.0 fix: the F10 fallback when Cinnabar does not open the list by itself, setting the panel again when a newer Cinnabar ignores the built-in one, never getting stuck after another mod's menu closes, and the Windows build scripts (`setup.ps1`, `build.ps1`).
